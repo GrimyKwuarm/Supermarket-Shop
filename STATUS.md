@@ -13,7 +13,8 @@
 - `git commit -m "Create recipe shopping page"` completed.
 - `git push -u origin main` completed.
 - Confirmed `index.html` is available in the GitHub repository.
-- GitHub Pages URL currently returns 404 until Pages is enabled in repository settings.
+- Pushed a `gh-pages` branch and confirmed GitHub Pages is built.
+- Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/` returns 200.
 
 ## Risks
 - Store stock and prices are not guaranteed in real time.
