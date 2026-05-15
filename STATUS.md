@@ -19,7 +19,7 @@
 - Pushed a `gh-pages` branch and confirmed GitHub Pages is built.
 - Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/` returns 200.
 - Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/vegetarian.html` returns 200.
-- Pending push and verification for custom item update.
+- Confirmed both live pages return 200 after the custom item update.
 
 ## Risks
 - Store stock and prices are not guaranteed in real time.
