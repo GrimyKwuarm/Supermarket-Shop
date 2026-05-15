@@ -110,6 +110,7 @@ const state = {
   hideChecked: false,
   servings: 4,
   checked: new Set(JSON.parse(localStorage.getItem("vegetarianRecipeShopChecked") || "[]")),
+  customItems: JSON.parse(localStorage.getItem("vegetarianRecipeShopCustomItems") || "[]"),
 };
 
 const recipeGrid = document.querySelector("#recipeGrid");
@@ -123,6 +124,11 @@ const visibleCount = document.querySelector("#visibleCount");
 const mealCount = document.querySelector("#mealCount");
 const servingsInput = document.querySelector("#servings");
 const hideCheckedButton = document.querySelector("#hideChecked");
+const customForm = document.querySelector("#customForm");
+const customName = document.querySelector("#customName");
+const customSection = document.querySelector("#customSection");
+const customQuantity = document.querySelector("#customQuantity");
+const customTableBody = document.querySelector("#customTableBody");
 
 function formatQuantity(item) {
   const multiplier = state.servings / 4;
@@ -138,6 +144,10 @@ function formatQuantity(item) {
 
 function saveChecked() {
   localStorage.setItem("vegetarianRecipeShopChecked", JSON.stringify([...state.checked]));
+}
+
+function saveCustomItems() {
+  localStorage.setItem("vegetarianRecipeShopCustomItems", JSON.stringify(state.customItems));
 }
 
 function renderRecipes() {
@@ -163,6 +173,28 @@ function renderFilters() {
       ${section}
     </button>
   `).join("");
+}
+
+function renderCustomSectionOptions() {
+  customSection.innerHTML = sections.map((section) => `<option value="${section}">${section}</option>`).join("");
+}
+
+function renderCustomItems() {
+  customTableBody.innerHTML = state.customItems.length
+    ? state.customItems.map((item) => `
+      <tr>
+        <td>
+          <input type="checkbox" data-custom-check="${item.id}" aria-label="Tick off ${item.name}" ${item.checked ? "checked" : ""}>
+        </td>
+        <td class="${item.checked ? "checked-text" : ""}">${item.name}</td>
+        <td class="${item.checked ? "checked-text" : ""}">${item.section}</td>
+        <td class="${item.checked ? "checked-text" : ""}">${item.quantity || "Any"}</td>
+        <td>
+          <button type="button" class="remove-item" data-custom-remove="${item.id}" aria-label="Remove ${item.name}">x</button>
+        </td>
+      </tr>
+    `).join("")
+    : `<tr><td colspan="5" class="empty-custom-row">No extra items yet.</td></tr>`;
 }
 
 function getVisibleItems() {
@@ -213,8 +245,9 @@ function renderWatchList() {
 }
 
 function renderProgress() {
-  const checked = state.checked.size;
-  const total = items.length;
+  const customChecked = state.customItems.filter((item) => item.checked).length;
+  const checked = state.checked.size + customChecked;
+  const total = items.length + state.customItems.length;
   const percent = total ? Math.round((checked / total) * 100) : 0;
 
   progressFill.style.width = `${percent}%`;
@@ -230,6 +263,7 @@ function renderAll() {
   hideCheckedButton.classList.toggle("active", state.hideChecked);
   hideCheckedButton.textContent = state.hideChecked ? "Show ticked" : "Hide ticked";
   renderFilters();
+  renderCustomItems();
   renderShoppingList();
   renderProgress();
 }
@@ -253,9 +287,49 @@ shoppingList.addEventListener("change", (event) => {
   renderAll();
 });
 
+customForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = customName.value.trim();
+  if (!name) return;
+
+  state.customItems.push({
+    id: `custom-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+    name,
+    section: customSection.value,
+    quantity: customQuantity.value.trim(),
+    checked: false,
+  });
+
+  customName.value = "";
+  customQuantity.value = "";
+  saveCustomItems();
+  renderAll();
+  customName.focus();
+});
+
+customTableBody.addEventListener("change", (event) => {
+  const checkbox = event.target.closest("[data-custom-check]");
+  if (!checkbox) return;
+  const item = state.customItems.find((customItem) => customItem.id === checkbox.dataset.customCheck);
+  if (!item) return;
+  item.checked = checkbox.checked;
+  saveCustomItems();
+  renderAll();
+});
+
+customTableBody.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-custom-remove]");
+  if (!button) return;
+  state.customItems = state.customItems.filter((item) => item.id !== button.dataset.customRemove);
+  saveCustomItems();
+  renderAll();
+});
+
 document.querySelector("#resetList").addEventListener("click", () => {
   state.checked.clear();
+  state.customItems = [];
   saveChecked();
+  saveCustomItems();
   renderAll();
 });
 
@@ -288,4 +362,5 @@ servingsInput.addEventListener("input", () => {
 
 renderRecipes();
 renderWatchList();
+renderCustomSectionOptions();
 renderAll();

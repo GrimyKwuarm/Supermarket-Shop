@@ -20,8 +20,9 @@ https://grimykwuarm.github.io/Supermarket-Shop/vegetarian.html
 - Review the five recommended recipes.
 - Filter the shopping list by supermarket section.
 - Tick items off as you shop.
+- Add custom supermarket items at the top of either shopping list.
 - See progress at a glance.
-- Reset the list when planning again.
+- Reset the list when planning again, including custom items.
 - Adjust the number of servings per recipe and see estimated quantities scale from the 4-serving baseline.
 - Switch between the original and vegetarian meal plans without replacing either one.
 

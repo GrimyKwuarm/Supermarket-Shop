@@ -91,6 +91,44 @@
           <p id="progressText">Nothing ticked yet.</p>
         </div>
 
+        <section class="custom-items" aria-labelledby="customItemsTitle">
+          <div class="custom-items-heading">
+            <div>
+              <h3 id="customItemsTitle">Other supermarket items</h3>
+              <p>Add anything else your friend needs for this shop.</p>
+            </div>
+          </div>
+          <form class="custom-form" id="customForm">
+            <label>
+              <span>Item</span>
+              <input id="customName" type="text" placeholder="Milk, coffee, snacks..." required>
+            </label>
+            <label>
+              <span>Section</span>
+              <select id="customSection"></select>
+            </label>
+            <label>
+              <span>Quantity</span>
+              <input id="customQuantity" type="text" placeholder="1 pack">
+            </label>
+            <button type="submit" class="ghost-button">Add item</button>
+          </form>
+          <div class="custom-table-wrap">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">Done</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Section</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Remove</th>
+                </tr>
+              </thead>
+              <tbody id="customTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
         <div class="shopping-layout">
           <div class="shopping-list" id="shoppingList"></div>
           <aside class="notes-panel" aria-labelledby="notesTitle">

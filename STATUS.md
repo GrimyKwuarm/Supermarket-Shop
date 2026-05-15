@@ -7,6 +7,7 @@
 - Initialized a local git repository and committed the site so it is ready to publish.
 - Pushed the site to the public GitHub repository `GrimyKwuarm/Supermarket-Shop`.
 - Added a separate vegetarian meal-plan page with new recipes and an independent shopping checklist.
+- Added custom supermarket item tables to both pages with saved tick-off and remove behavior.
 
 ## Checks
 - `node --check app.js` passed.
@@ -18,6 +19,7 @@
 - Pushed a `gh-pages` branch and confirmed GitHub Pages is built.
 - Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/` returns 200.
 - Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/vegetarian.html` returns 200.
+- Pending push and verification for custom item update.
 
 ## Risks
 - Store stock and prices are not guaranteed in real time.

@@ -10,3 +10,6 @@ Manual checks:
 - Checklist state persists after reload.
 - Reset clears checked items.
 - Serving control scales quantities.
+- Custom item form adds rows.
+- Custom item rows can be ticked off and removed.
+- Custom items persist after reload and stay separate between original and vegetarian pages.
