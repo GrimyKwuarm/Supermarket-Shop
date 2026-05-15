@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Vegetarian Recipe Shop Plan</title>
-    <link rel="stylesheet" href="styles.css?v=custom-items-2">
+    <link rel="stylesheet" href="styles.css?v=custom-items-3">
   </head>
   <body class="vegetarian-page">
     <header class="topbar">
@@ -91,10 +94,10 @@
           <p id="progressText">Nothing ticked yet.</p>
         </div>
 
-        <section class="custom-items" aria-labelledby="customItemsTitle">
+        <section class="custom-items vegetarian-custom-items" aria-labelledby="customItemsTitle">
           <div class="custom-items-heading">
             <div>
-              <h3 id="customItemsTitle">Other supermarket items</h3>
+              <h3 id="customItemsTitle">Other vegetarian shop items</h3>
               <p>Add anything else your friend needs for this shop.</p>
             </div>
           </div>
@@ -105,7 +108,14 @@
             </label>
             <label>
               <span>Section</span>
-              <select id="customSection"></select>
+              <select id="customSection">
+                <option value="Vegetarian Protein">Vegetarian Protein</option>
+                <option value="Rice, Noodles & Grains">Rice, Noodles & Grains</option>
+                <option value="Fresh Produce">Fresh Produce</option>
+                <option value="Sauces & Condiments">Sauces & Condiments</option>
+                <option value="Cans, Jars & Dry Goods">Cans, Jars & Dry Goods</option>
+                <option value="Nice-to-Have">Nice-to-Have</option>
+              </select>
             </label>
             <label>
               <span>Quantity</span>
@@ -139,6 +149,6 @@
       </section>
     </main>
 
-    <script src="vegetarian.js?v=custom-items-2"></script>
+    <script src="vegetarian.js?v=custom-items-3"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@
 - Added a separate vegetarian meal-plan page with new recipes and an independent shopping checklist.
 - Added custom supermarket item tables to both pages with saved tick-off and remove behavior.
 - Added cache-busting asset versions so the vegetarian page loads the latest custom item script and styles.
+- Made the vegetarian custom-item panel more explicit and added no-cache/versioned assets after reports of stale display.
 
 ## Checks
 - `node --check app.js` passed.

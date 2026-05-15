@@ -361,6 +361,11 @@ main {
   box-shadow: var(--shadow);
 }
 
+.vegetarian-custom-items {
+  border-color: rgba(79, 141, 114, 0.55);
+  background: rgba(248, 255, 249, 0.96);
+}
+
 .custom-items-heading {
   margin-bottom: 14px;
 }
