@@ -3,6 +3,7 @@
 ## Now
 - Static interactive recipe and shopping page.
 - Browser-local checklist progress.
+- Separate original and vegetarian plans.
 
 ## Next
 - Add ability to swap recipes in and out.

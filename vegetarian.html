@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Recipe Shop Plan</title>
+    <title>Vegetarian Recipe Shop Plan</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="vegetarian-page">
     <header class="topbar">
       <div>
-        <p class="eyebrow">PAK'nSAVE Wainoni meal plan</p>
-        <h1>Five dinners, one tidy shop</h1>
+        <p class="eyebrow">Vegetarian PAK'nSAVE Wainoni meal plan</p>
+        <h1>Five veggie dinners, one tidy shop</h1>
       </div>
       <div class="header-tools">
         <nav class="page-switch" aria-label="Meal plan pages">
-          <a class="page-pill active" href="index.html">Original</a>
-          <a class="page-pill" href="vegetarian.html">Vegetarian</a>
+          <a class="page-pill" href="index.html">Original</a>
+          <a class="page-pill active" href="vegetarian.html">Vegetarian</a>
         </nav>
         <div class="serving-control" aria-label="Serving control">
           <label for="servings">Servings per recipe</label>
@@ -32,7 +32,7 @@
       <section class="summary-band" aria-label="Plan summary">
         <div>
           <span class="summary-number">5</span>
-          <span class="summary-label">new recipes</span>
+          <span class="summary-label">vegetarian recipes</span>
         </div>
         <div>
           <span class="summary-number" id="mealCount">20</span>
@@ -50,21 +50,21 @@
 
       <section class="taste-profile" aria-labelledby="tasteProfileTitle">
         <div>
-          <p class="eyebrow">What these recipes have in common</p>
-          <h2 id="tasteProfileTitle">Fresh fakeaway bowls with punchy sauces</h2>
+          <p class="eyebrow">Same flavour lane</p>
+          <h2 id="tasteProfileTitle">Crunchy bowls, sticky tofu, tahini, herbs, and heat</h2>
         </div>
         <p>
-          Korean, Vietnamese, Middle Eastern, and poke-style dinners kept coming up:
-          rice or noodles, chicken thighs or mince, crunchy veg, sesame, ginger, garlic,
-          herbs, gochujang, sriracha, kewpie, tahini, and yoghurt.
+          This keeps the Korean, Vietnamese, Middle Eastern, and poke-bowl feel:
+          tofu, chickpeas, rice, noodles, fresh veg, pickles, gochujang, sesame,
+          sriracha, tahini, lime, ginger, garlic, coriander, and mint.
         </p>
       </section>
 
       <section aria-labelledby="recipesTitle">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Shortlist</p>
-            <h2 id="recipesTitle">Recipes to try next</h2>
+            <p class="eyebrow">Friend version</p>
+            <h2 id="recipesTitle">Vegetarian recipes to try</h2>
           </div>
           <button type="button" class="ghost-button" id="openAllRecipes">Open recipe links</button>
         </div>
@@ -75,7 +75,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Consolidated shop</p>
-            <h2 id="shoppingTitle">Shopping list</h2>
+            <h2 id="shoppingTitle">Vegetarian shopping list</h2>
           </div>
           <div class="actions">
             <button type="button" class="ghost-button" id="hideChecked">Hide ticked</button>
@@ -101,6 +101,6 @@
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="vegetarian.js"></script>
   </body>
 </html>
