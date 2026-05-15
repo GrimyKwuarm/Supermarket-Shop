@@ -17,7 +17,7 @@
 - Confirmed `index.html` is available in the GitHub repository.
 - Pushed a `gh-pages` branch and confirmed GitHub Pages is built.
 - Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/` returns 200.
-- Pending push and verification for `vegetarian.html`.
+- Confirmed `https://grimykwuarm.github.io/Supermarket-Shop/vegetarian.html` returns 200.
 
 ## Risks
 - Store stock and prices are not guaranteed in real time.
