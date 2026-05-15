@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe Shop Plan</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PAK'nSAVE Wainoni meal plan</p>
+        <h1>Five dinners, one tidy shop</h1>
+      </div>
+      <div class="serving-control" aria-label="Serving control">
+        <label for="servings">Servings per recipe</label>
+        <div class="stepper">
+          <button type="button" id="decreaseServings" aria-label="Decrease servings">-</button>
+          <input id="servings" type="number" min="2" max="8" value="4">
+          <button type="button" id="increaseServings" aria-label="Increase servings">+</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-band" aria-label="Plan summary">
+        <div>
+          <span class="summary-number">5</span>
+          <span class="summary-label">new recipes</span>
+        </div>
+        <div>
+          <span class="summary-number" id="mealCount">20</span>
+          <span class="summary-label">total servings</span>
+        </div>
+        <div>
+          <span class="summary-number" id="checkedCount">0</span>
+          <span class="summary-label">items ticked</span>
+        </div>
+        <div>
+          <span class="summary-number" id="visibleCount">0</span>
+          <span class="summary-label">items showing</span>
+        </div>
+      </section>
+
+      <section class="taste-profile" aria-labelledby="tasteProfileTitle">
+        <div>
+          <p class="eyebrow">What these recipes have in common</p>
+          <h2 id="tasteProfileTitle">Fresh fakeaway bowls with punchy sauces</h2>
+        </div>
+        <p>
+          Korean, Vietnamese, Middle Eastern, and poke-style dinners kept coming up:
+          rice or noodles, chicken thighs or mince, crunchy veg, sesame, ginger, garlic,
+          herbs, gochujang, sriracha, kewpie, tahini, and yoghurt.
+        </p>
+      </section>
+
+      <section aria-labelledby="recipesTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shortlist</p>
+            <h2 id="recipesTitle">Recipes to try next</h2>
+          </div>
+          <button type="button" class="ghost-button" id="openAllRecipes">Open recipe links</button>
+        </div>
+        <div class="recipe-grid" id="recipeGrid"></div>
+      </section>
+
+      <section aria-labelledby="shoppingTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Consolidated shop</p>
+            <h2 id="shoppingTitle">Shopping list</h2>
+          </div>
+          <div class="actions">
+            <button type="button" class="ghost-button" id="hideChecked">Hide ticked</button>
+            <button type="button" class="ghost-button" id="resetList">Reset</button>
+          </div>
+        </div>
+
+        <div class="filters" id="filters" aria-label="Shopping sections"></div>
+        <div class="progress-wrap" aria-label="Shopping progress">
+          <div class="progress-bar">
+            <span id="progressFill"></span>
+          </div>
+          <p id="progressText">Nothing ticked yet.</p>
+        </div>
+
+        <div class="shopping-layout">
+          <div class="shopping-list" id="shoppingList"></div>
+          <aside class="notes-panel" aria-labelledby="notesTitle">
+            <h2 id="notesTitle">Check first</h2>
+            <ul id="watchList"></ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Local/editor files
+.vscode/
+.idea/
+
+# Dependency folders if the project grows
+node_modules/
+
+# Build outputs if added later
+dist/
+build/
