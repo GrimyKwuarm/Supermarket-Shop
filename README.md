@@ -5,6 +5,13 @@ An interactive local web page for five recipe recommendations and a consolidated
 ## Open It
 Open `index.html` in your browser.
 
+## Shared Version
+Repository: https://github.com/GrimyKwuarm/Supermarket-Shop
+
+Once GitHub Pages is enabled for `main` / `/root`, the public site will be:
+
+https://grimykwuarm.github.io/Supermarket-Shop/
+
 ## Features
 - Review the five recommended recipes.
 - Filter the shopping list by supermarket section.
